@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    
+    <title>Portfolio</title>
+  </head>
+  <body>
+
+    <!-- PARTICLE JS BACKGROUND -->
+    <div id="particles-js"></div>
+
+    <!-- NAVIGATION BAR -->
+    <nav class="navbar">
+      <ul>
+        <li>
+          <a href="#after-intro" class="dot active" data-scroll="after-intro">
+            <span>About Me</span>
+          </a>
+        </li>
+        <li>
+          <a href="#projects" class="dot" data-scroll="projects">
+            <span>My Projects</span>
+          </a>
+        </li>
+        <li>
+          <a href="#contact" class="dot" data-scroll="contact">
+            <span>Contact Me</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- SCROLLDOWN LABEL -->
+    <p class="scroll-label">SCROLL DOWN</p>
+
+    <!-- PROGRAMMER INFO SECTION -->
+    <section id="after-intro">
+        <div class="container vh-100 p-5">
+          <div class="row">
+            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+              <h3 class="after-intro-msg">
+                  <span class="box"></span>
+                  <span class='hi'>Hi, I'm</span>
+                  <span class="text"></span>
+                  <span class="cursor text-warning">|</span>
+              </h3>
+            </div>
+          </div>
+        </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section id="projects">
+      <div class="vh-100"></div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact">
+      <div class="vh-100"></div>
+    </section>
+
+    <!-- INTRODUCTION -->
+    <div class="intro d-flex justify-content-center align-items-center">
+        <div class="intro-msg">
+            <h1>
+               <span id="intro-txt">while ($me.isAlive()) {</span>
+            </h1>
+            <h1>
+               <span id="intro-txt" class="ps-5">$me.code();</span>
+            </h1>
+            <h1>
+               <span id="intro-txt">}</span>
+            </h1>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/TextPlugin.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/EasePack.min.js"></script>
+    <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script src="assets/js/particle.js"></script>
+
+    <!-- NAVIGATION BAR SCRIPT -->
+    <script type="text/javascript">
+
+      $(document).ready(function(){
+      
+        $(window).on('scroll',function(){
+      
+          var link = $('.navbar a.dot');
+          var top = $(window).scrollTop();
+      
+          $('section').each(function(){
+            var id = $(this).attr('id');
+            var height = $(this).height();
+            var offset = $(this).offset().top - 150;
+            if(top >= offset && top < offset + height){
+              link.removeClass('active');
+              $('.navbar').find('[data-scroll="' + id + '"]').addClass('active');
+            }
+          });
+      
+        });
+      
+      });
+      
+    </script>
+
+
+  </body>
+</html>
